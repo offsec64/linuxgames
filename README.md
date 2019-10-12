@@ -9,4 +9,9 @@ It includes the following games (more to come):
 * Snake
 
 ## How to use
-LINUXGAMES is super simple.
+_LINUXGAMES is __super__ simple to use._
+
+First, we need to get the script itself. In the Ubuntu shell, type the following command to clone the repository. make sure to be in the directory you want.
+
+`git clone https://github.com/offsec64/linuxgames/`
+
