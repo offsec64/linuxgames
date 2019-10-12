@@ -30,3 +30,7 @@ Next, allow execution of the shell script.
 
 Then run the script!
 
+`./linuxgames`
+
+> You should copy it to your root directory to make running it easier, like with the `cp` command.
+
