@@ -18,7 +18,7 @@
 mkdir /home/$USER/linuxgames/ > /dev/null 2>&1
 cd /home/$USER/linuxgames/
 
-# Make the installer file to install the games and also makes it so it writes to the stasus file so the script knows it has been run.
+# Make the installer file to install the games and also makes it so it writes to the status file so the script knows it has been run.
 echo '# LINUXGAMES v1.0 installer file' > installer.sh
 echo sudo apt update -y >> installer.sh
 echo sudo apt install bastet -y >> installer.sh
@@ -36,10 +36,6 @@ echo fi >> installerquestion.sh
 
 # Checks to see if the "stats.txt" file exists, if not, than runs installer question. This is to see if the game has been run so it doesn't have to install every time.
 [ -f /home/$USER/linuxgames/stats.txt ] || sh installerquestion.sh
-
-# Writes the status file so the script has been ran.
-echo LINUXGAMES script by OffSec64 file for showing the status if the games are installed > stats.txt
-echo INSTALLED >> stats.txt
 
 
 echo '
