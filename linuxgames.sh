@@ -18,12 +18,14 @@
 mkdir /home/$USER/linuxgames/ > /dev/null 2>&1
 cd /home/$USER/linuxgames/
 
-# Make the installer file to install the games
+# Make the installer file to install the games and also makes it so it writes to the stasus file so the script knows it has been run.
 echo '# LINUXGAMES v1.0 installer file' > installer.sh
 echo sudo apt update -y >> installer.sh
 echo sudo apt install bastet -y >> installer.sh
 echo sudo apt install pacman4console -y >> installer.sh
 echo sudo apt install nsnake -y >> installer.sh
+echo 'echo LINUXGAMES script by OffSec64 file for showing the status if the games are installed > stats.txt' >> installer.sh
+echo 'echo INSTALLED >> stats.txt' >> installer.sh
 
 # Writes the whiptail popup message file for if the program has never been ran. 
 echo 'if (whiptail --title "QUESTION" --yesno "It looks like LINUXGAMES has never been run. Would you like to install the game dependencies? It may take a few minutes." 8 78); then' > installerquestion.sh
@@ -39,7 +41,7 @@ echo fi >> installerquestion.sh
 echo LINUXGAMES script by OffSec64 file for showing the status if the games are installed > stats.txt
 echo INSTALLED >> stats.txt
 
-# Writes the whiptail menu file to select the game and run it
+
 echo '
     ADVSEL=$(whiptail --title "LINUXGAMES v1.0" --menu "Choose an option" 15 60 4 \
         "1" "Tetris" \
